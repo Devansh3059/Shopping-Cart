@@ -4,7 +4,11 @@
         <title>The Generics | About</title>
         <meta name="description" content="This is the description">
         <link rel="stylesheet" href="/css/main.css" />
-        <script src="/js/main.js" async></script>
+        <script src="https://checkout.stripe.com/checkout.js" defer></script>
+        <script>
+            var stripePublicKey = '<%= stripePublicKey %>'
+        </script>
+        <script src="/js/main.js" defer></script>
 
     </head>
     <body>
