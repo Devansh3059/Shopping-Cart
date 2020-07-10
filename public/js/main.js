@@ -52,7 +52,7 @@ window.onload = function () {
                 },
                 body: JSON.stringify({
                     stripeTokenId: token.id,
-                    items: items
+                    items: items })
                 }).then(function(res){
                     return res.json()
                 }).then(function(data) {
@@ -65,7 +65,6 @@ window.onload = function () {
                 }).catch((err)=>{
                     console.log(err)
                 })
-            })
         }
     })
 

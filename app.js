@@ -46,13 +46,13 @@ app.post("/purchase",function(req,res){
         else{
             // console.log('purchase')
             const itemsJson=JSON.parse(data)
-            const itemsArray = items.Json.music.concat(items.Json.merch)
+            const itemsArray = itemsJson.music.concat(itemsJson.merch)
             let total = 0
-            req.body.items.forEach(item => {
-                const itemJson = itemsArray.find((i)=>{
+            req.body.items.forEach(function(item) {
+                const itemJson = itemsArray.find(function(i){
                     return i.id == item.id
                 })
-                total = total + itemJson.price * item*quantity
+                total = total + itemJson.price * item.quantity
             });
 
             stripe.charges.create({
